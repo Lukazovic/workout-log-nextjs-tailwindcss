@@ -1,6 +1,6 @@
 {
-  "name": "NextJS with TailwindCSS - Boilerplate",
-  "short_name": "NextJS with TailwindCSS",
+  "name": "Workout Log",
+  "short_name": "Workout Log",
   "icons": [
     {
       "src": "/tailwindcss.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#fff",
-  "description": "NextJS with TailwindCSS - Boilerplate ",
+  "description": "Workout Log",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#fff"
