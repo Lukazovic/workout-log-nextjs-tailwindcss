@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Example /> should render Example heading 1`] = `
+<div
+  class="w-full h-screen bg-primary-900 pt-4 m-0 flex flex-col items-center justify-center"
+>
+  <h1
+    class="text-3xl font-bold text-white"
+  >
+    Example
+  </h1>
+  <p
+    class="text-white mt-6"
+  >
+    A component example with TailwindCSS
+  </p>
+  <img
+    alt="Tailwindcss Logo"
+    class="w-80 h-80"
+    src="/tailwindcss.svg"
+  />
+</div>
+`;

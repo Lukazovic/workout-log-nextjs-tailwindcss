@@ -1,0 +1,21 @@
+{
+  "name": "NextJS with TailwindCSS - Boilerplate",
+  "short_name": "NextJS with TailwindCSS",
+  "icons": [
+    {
+      "src": "/tailwindcss.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/tailwindcss.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#fff",
+  "description": "NextJS with TailwindCSS - Boilerplate ",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#fff"
+}
