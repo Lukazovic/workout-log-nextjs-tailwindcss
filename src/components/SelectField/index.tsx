@@ -12,7 +12,7 @@ export type SelectFieldProps = {
   disabled?: boolean
   options: SelectOptionsProps[]
   onChange?: (value: string) => void
-} & SelectHTMLAttributes<HTMLSelectElement>
+} & Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>
 
 const SelectField = ({
   name,

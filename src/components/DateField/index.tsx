@@ -6,7 +6,7 @@ export type DateFieldProps = {
   initialValue?: string
   disabled?: boolean
   onChange?: (value: string) => void
-} & InputHTMLAttributes<HTMLInputElement>
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
 const DateField = ({
   label,

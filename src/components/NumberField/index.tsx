@@ -8,7 +8,7 @@ export type NumberFieldProps = {
   max?: number
   min?: number
   onChange?: (value: number) => void
-} & InputHTMLAttributes<HTMLInputElement>
+} & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
 const NumberField = ({
   label,
