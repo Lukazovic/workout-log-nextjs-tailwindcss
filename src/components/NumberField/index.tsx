@@ -13,7 +13,7 @@ export type NumberFieldProps = {
 const NumberField = ({
   label,
   name,
-  initialValue = 0,
+  initialValue,
   disabled,
   max,
   min,
