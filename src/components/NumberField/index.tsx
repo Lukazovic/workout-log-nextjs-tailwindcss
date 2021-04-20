@@ -36,7 +36,7 @@ const NumberField = ({
     <div className="flex flex-col">
       {!!label && (
         <label
-          className="block text-sm font-medium text-gray-700"
+          className="mb-1 block text-sm font-medium text-gray-700"
           htmlFor={name}
         >
           {label}
@@ -44,7 +44,7 @@ const NumberField = ({
       )}
       <input
         {...props}
-        className={`mt-1 w-full border-gray-300 focus:border-primary-400 focus:outline-primary-400 rounded shadow-sm ${
+        className={`w-full border-gray-300 focus:border-primary-400 focus:outline-primary-400 rounded shadow-sm ${
           disabled ? 'cursor-not-allowed' : 'cursor-pointer'
         }`}
         type="number"
