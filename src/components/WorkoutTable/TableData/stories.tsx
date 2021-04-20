@@ -18,7 +18,7 @@ export const Default: Story<TableDataProps> = (args) => (
         key={item.id}
         id={item.id}
         duration={item.duration}
-        type={item.type}
+        kind={item.kind}
         date={item.date}
         variant={GeneralTools.isOdd(index) ? 'light' : 'dark'}
       />

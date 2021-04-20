@@ -3,12 +3,12 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import DateTools from 'services/tools/date'
 
-export type WorkoutTypes = 'run' | 'bike' | 'swimming'
+export type WorkoutKinds = 'run' | 'bike' | 'swimming'
 
 export type TableDataProps = {
   id: string
   duration: number
-  type: WorkoutTypes
+  kind: WorkoutKinds
   date: number
   variant?: 'light' | 'dark'
   onRemove?: (id: string) => void
@@ -22,7 +22,7 @@ const BACKGROUND = {
 const TableData = ({
   id,
   duration,
-  type,
+  kind,
   date,
   variant = 'light',
   onRemove
@@ -38,7 +38,7 @@ const TableData = ({
   return (
     <tr className={`w-full text-lg grid grid-cols-3 ${backgroundColor}`}>
       <td className="px-2">{duration}h</td>
-      <td className="capitalize px-2">{type}</td>
+      <td className="capitalize px-2">{kind}</td>
       <td className="px-2 flex justify-between">
         {formattedDate}
 

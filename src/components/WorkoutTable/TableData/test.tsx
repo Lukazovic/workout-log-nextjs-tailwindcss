@@ -7,7 +7,7 @@ import TableData, { TableDataProps } from '.'
 const props: TableDataProps = {
   id: '1',
   duration: 5,
-  type: 'bike',
+  kind: 'bike',
   date: 1618891669586
 }
 
@@ -19,7 +19,7 @@ describe('<TableData />', () => {
     expect(screen.getByText(`${props.duration}h`)).toBeInTheDocument()
 
     // type
-    expect(screen.getByText(`${props.type}`)).toBeInTheDocument()
+    expect(screen.getByText(`${props.kind}`)).toBeInTheDocument()
 
     // formatted date
     expect(screen.getByText('20/04/2021')).toBeInTheDocument()
