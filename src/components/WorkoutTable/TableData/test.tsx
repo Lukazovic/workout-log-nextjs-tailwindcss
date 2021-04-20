@@ -1,5 +1,6 @@
-import { render, screen, RenderResult, waitFor } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { renderInTableBody } from 'utils/tests/helpers'
 
 import TableData, { TableDataProps } from '.'
 
@@ -9,13 +10,6 @@ const props: TableDataProps = {
   type: 'bike',
   date: 1618891669586
 }
-
-export const renderInTableBody = (children: React.ReactNode): RenderResult =>
-  render(
-    <table>
-      <tbody>{children}</tbody>
-    </table>
-  )
 
 describe('<TableData />', () => {
   it('should render correctly', () => {
