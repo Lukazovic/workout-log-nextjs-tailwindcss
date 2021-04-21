@@ -7,7 +7,7 @@ describe('<NumberField />', () => {
   it('should render the Number input', () => {
     render(<NumberField />)
 
-    expect(screen.getByRole('spinbutton')).toHaveValue(0)
+    expect(screen.getByRole('spinbutton')).toHaveValue(null)
   })
 
   it('should render with given initial value', () => {
