@@ -11,6 +11,7 @@ export type ExerciseProps = {
 }
 
 export type TableDataProps = {
+  className?: string
   variant?: 'light' | 'dark'
   onRemove?: (id: string) => void
 } & ExerciseProps
@@ -21,6 +22,7 @@ const BACKGROUND = {
 }
 
 const TableData = ({
+  className,
   id,
   duration,
   kind,
@@ -37,7 +39,9 @@ const TableData = ({
   }
 
   return (
-    <tr className={`w-full text-lg grid grid-cols-3 ${backgroundColor}`}>
+    <tr
+      className={`w-full text-lg grid grid-cols-3 ${backgroundColor} ${className}`.trim()}
+    >
       <td className="px-2">{duration}h</td>
       <td className="capitalize px-2">{kind}</td>
       <td className="px-2 flex justify-between">

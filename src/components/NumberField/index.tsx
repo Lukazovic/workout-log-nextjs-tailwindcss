@@ -1,6 +1,7 @@
 import { useState, InputHTMLAttributes } from 'react'
 
 export type NumberFieldProps = {
+  className?: string
   label?: string
   name?: string
   initialValue?: number
@@ -11,6 +12,7 @@ export type NumberFieldProps = {
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
 const NumberField = ({
+  className = '',
   label,
   name,
   initialValue,
@@ -33,7 +35,7 @@ const NumberField = ({
   }
 
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${className}`.trim()}>
       {!!label && (
         <label
           className="mb-1 block text-sm font-medium text-gray-700"

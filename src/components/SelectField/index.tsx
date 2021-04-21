@@ -7,6 +7,7 @@ export type SelectOptionsProps = {
 }
 
 export type SelectFieldProps = {
+  className?: string
   label?: string
   initialValue?: string
   disabled?: boolean
@@ -15,6 +16,7 @@ export type SelectFieldProps = {
 } & Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>
 
 const SelectField = ({
+  className = '',
   name,
   label,
   initialValue,
@@ -33,7 +35,7 @@ const SelectField = ({
   }
 
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${className}`.trim()}>
       {!!label && (
         <label
           className="mb-1 block text-sm font-medium text-gray-700"
