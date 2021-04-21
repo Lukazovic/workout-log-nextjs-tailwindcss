@@ -9,6 +9,7 @@
     "fullscreen",
     "nextjs",
     "plopfile",
-    "testid"
+    "testid",
+    "typecheck"
   ]
 }
