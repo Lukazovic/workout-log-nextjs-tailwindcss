@@ -12,3 +12,7 @@ export default {
 export const Default: Story<WorkoutTableProps> = (args) => (
   <WorkoutTable {...args} items={[...items]} />
 )
+
+export const Empty: Story<WorkoutTableProps> = (args) => (
+  <WorkoutTable {...args} />
+)

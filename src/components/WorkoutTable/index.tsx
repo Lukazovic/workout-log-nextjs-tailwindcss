@@ -1,5 +1,6 @@
 import TableHeader from 'components/WorkoutTable/TableHeader'
 import TableData, { ExerciseProps } from 'components/WorkoutTable/TableData'
+import Empty from 'components/Empty'
 
 import GeneralTools from 'services/tools/general'
 
@@ -13,8 +14,7 @@ const WorkoutTable = ({ items }: WorkoutTableProps) => (
       <TableHeader />
     </thead>
     <tbody>
-      {items &&
-        items.length &&
+      {items && items.length ? (
         items.map((item, index) => (
           <TableData
             key={item.id}
@@ -24,7 +24,14 @@ const WorkoutTable = ({ items }: WorkoutTableProps) => (
             date={item.date}
             variant={GeneralTools.isOdd(index) ? 'light' : 'dark'}
           />
-        ))}
+        ))
+      ) : (
+        <tr>
+          <td className="py-6">
+            <Empty />
+          </td>
+        </tr>
+      )}
     </tbody>
   </table>
 )
