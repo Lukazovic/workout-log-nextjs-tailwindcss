@@ -3,26 +3,26 @@ import ValidationTools from '.'
 import KIND_OPTIONS from 'utils/enums/options.json'
 
 describe('ValidationTools', () => {
-  describe('#isTimeValid', () => {
-    describe('time is less than 0', () => {
+  describe('#isDurationValid', () => {
+    describe('duration is less than 0', () => {
       it('should return false', () => {
-        expect(ValidationTools.isTimeValid(-1)).toBeFalsy()
-        expect(ValidationTools.isTimeValid(-5)).toBeFalsy()
-        expect(ValidationTools.isTimeValid(-10)).toBeFalsy()
+        expect(ValidationTools.isDurationValid(-1)).toBeFalsy()
+        expect(ValidationTools.isDurationValid(-5)).toBeFalsy()
+        expect(ValidationTools.isDurationValid(-10)).toBeFalsy()
       })
     })
 
-    describe('time is equal to 0', () => {
+    describe('duration is equal to 0', () => {
       it('should return false', () => {
-        expect(ValidationTools.isTimeValid(0)).toBeFalsy()
+        expect(ValidationTools.isDurationValid(0)).toBeFalsy()
       })
     })
 
-    describe('time is greater than 0', () => {
+    describe('duration is greater than 0', () => {
       it('should return true', () => {
-        expect(ValidationTools.isTimeValid(1)).toBeTruthy()
-        expect(ValidationTools.isTimeValid(5)).toBeTruthy()
-        expect(ValidationTools.isTimeValid(10)).toBeTruthy()
+        expect(ValidationTools.isDurationValid(1)).toBeTruthy()
+        expect(ValidationTools.isDurationValid(5)).toBeTruthy()
+        expect(ValidationTools.isDurationValid(10)).toBeTruthy()
       })
     })
   })

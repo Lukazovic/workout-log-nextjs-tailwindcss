@@ -3,16 +3,17 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import DateTools from 'services/tools/date'
 
-export type WorkoutKinds = 'run' | 'bike' | 'swimming'
-
-export type TableDataProps = {
+export type ExerciseProps = {
   id: string
   duration: number
-  kind: WorkoutKinds
+  kind: string
   date: number
+}
+
+export type TableDataProps = {
   variant?: 'light' | 'dark'
   onRemove?: (id: string) => void
-}
+} & ExerciseProps
 
 const BACKGROUND = {
   light: 'bg-white',

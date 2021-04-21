@@ -1,6 +1,6 @@
-import { TableDataProps } from '.'
+import { ExerciseProps } from '.'
 
-export const items: TableDataProps[] = [
+export const items: ExerciseProps[] = [
   { id: '1', duration: 1, kind: 'run', date: new Date().getTime() },
   { id: '2', duration: 1, kind: 'bike', date: new Date().getTime() },
   { id: '3', duration: 1, kind: 'swimming', date: new Date().getTime() },

@@ -9,28 +9,26 @@ import ValidationTools from 'services/tools/validation'
 
 import DEFAULT_KIND_OPTIONS from 'utils/enums/options.json'
 
+import { ExerciseProps } from 'components/WorkoutTable/TableData'
+
 const KIND_OPTIONS: SelectOptionsProps[] = [
   { label: 'Select a exercise', value: 'nothing', disabled: true },
   ...DEFAULT_KIND_OPTIONS
 ]
 
-export type AddWorkoutFormSchema = {
-  time: number
-  kind: string
-  date: number
-}
+export type AddWorkoutFormSchema = Omit<ExerciseProps, 'id'>
 
 export type AddWorkoutFormProps = {
   onSubmit?: (Schema: AddWorkoutFormSchema) => void
 }
 
 const AddWorkoutForm = ({ onSubmit }: AddWorkoutFormProps) => {
-  const [time, setTime] = useState<number>(0)
+  const [duration, setDuration] = useState<number>(0)
   const [kind, setKind] = useState<string>(KIND_OPTIONS[0].value as string)
   const [date, setDate] = useState<number>(new Date().getTime())
 
-  const handleTimeChange = (newTime: number) => {
-    setTime(newTime)
+  const handleDurationChange = (newDuration: number) => {
+    setDuration(newDuration)
   }
 
   const handleKindChange = (newKind: string) => {
@@ -45,8 +43,8 @@ const AddWorkoutForm = ({ onSubmit }: AddWorkoutFormProps) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
 
-    if (!ValidationTools.isTimeValid(time as number)) {
-      alert('Selected time is not valid!')
+    if (!ValidationTools.isDurationValid(duration as number)) {
+      alert('Selected duration is not valid!')
       return
     }
 
@@ -61,7 +59,7 @@ const AddWorkoutForm = ({ onSubmit }: AddWorkoutFormProps) => {
     }
 
     const schema: AddWorkoutFormSchema = {
-      time: Number(time),
+      duration: Number(duration),
       kind,
       date: Number(date)
     }
@@ -77,10 +75,10 @@ const AddWorkoutForm = ({ onSubmit }: AddWorkoutFormProps) => {
         <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-6">
           <NumberField
             placeholder="Time spent"
-            name="time"
-            value={time}
+            name="duration"
+            value={duration}
             min={0}
-            onChange={handleTimeChange}
+            onChange={handleDurationChange}
           />
           <SelectField
             options={[...KIND_OPTIONS]}

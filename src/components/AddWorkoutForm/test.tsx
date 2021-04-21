@@ -35,7 +35,9 @@ describe('<AddWorkoutForm />', () => {
       expect(onSubmit).toHaveBeenCalledTimes(0)
       expect(alertFunction).toHaveBeenCalledTimes(1)
     })
-    expect(alertFunction).toHaveBeenCalledWith('Selected time is not valid!')
+    expect(alertFunction).toHaveBeenCalledWith(
+      'Selected duration is not valid!'
+    )
   })
 
   it('should not dispatch onSubmit when no time is provided', async () => {
@@ -59,7 +61,9 @@ describe('<AddWorkoutForm />', () => {
       expect(onSubmit).toHaveBeenCalledTimes(0)
       expect(alertFunction).toHaveBeenCalledTimes(1)
     })
-    expect(alertFunction).toHaveBeenCalledWith('Selected time is not valid!')
+    expect(alertFunction).toHaveBeenCalledWith(
+      'Selected duration is not valid!'
+    )
   })
 
   it('should not dispatch onSubmit when kind is not allowed', async () => {
@@ -147,7 +151,7 @@ describe('<AddWorkoutForm />', () => {
       expect(alertFunction).toHaveBeenCalledTimes(0)
     })
     expect(onSubmit).toHaveBeenCalledWith({
-      time: 11,
+      duration: 11,
       kind: 'run',
       date: 1609286400000
     })
