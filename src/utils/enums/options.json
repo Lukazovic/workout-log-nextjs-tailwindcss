@@ -1,0 +1,5 @@
+[
+  { "label": "Run", "value": "run" },
+  { "label": "Swimming", "value": "swimming" },
+  { "label": "Bike", "value": "bike" }
+]

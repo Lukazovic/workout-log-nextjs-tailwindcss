@@ -4,6 +4,8 @@
       "source.fixAll.eslint": true
   },
   "cSpell.words": [
+    "fontawesome",
+    "fortawesome",
     "fullscreen",
     "nextjs",
     "plopfile",

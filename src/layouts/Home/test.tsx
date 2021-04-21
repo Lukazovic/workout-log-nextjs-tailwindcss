@@ -2,19 +2,19 @@ import { render, screen } from '@testing-library/react'
 
 import HomeLayout from '.'
 
-jest.mock('components/Example', () => {
+jest.mock('components/AddWorkoutForm', () => {
   return {
     __esModule: true,
     default: function Mock() {
-      return <div data-testid="Mock Example"></div>
+      return <div data-testid="Mock AddWorkoutForm"></div>
     }
   }
 })
 
 describe('<HomeLayout />', () => {
-  it('should render Example Component', () => {
+  it('should render AddWorkoutForm Component', () => {
     render(<HomeLayout />)
 
-    expect(screen.getByTestId('Mock Example')).toBeInTheDocument()
+    expect(screen.getByTestId('Mock AddWorkoutForm')).toBeInTheDocument()
   })
 })
