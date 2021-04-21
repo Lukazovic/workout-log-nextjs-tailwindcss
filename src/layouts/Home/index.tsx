@@ -1,7 +1,7 @@
-import Example from 'components/Example'
+import AddWorkoutForm from 'components/AddWorkoutForm'
 
 const Home = () => {
-  return <Example />
+  return <AddWorkoutForm />
 }
 
 export default Home

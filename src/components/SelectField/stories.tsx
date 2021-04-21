@@ -5,7 +5,7 @@ import SelectField, { SelectFieldProps } from '.'
 import { options } from './mock'
 
 export default {
-  title: 'SelectField',
+  title: 'Form/SelectField',
   component: SelectField,
   argTypes: {
     onChange: { action: 'changed' }
