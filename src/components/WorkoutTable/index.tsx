@@ -7,9 +7,14 @@ import GeneralTools from 'services/tools/general'
 export type WorkoutTableProps = {
   className?: string
   items?: ExerciseProps[]
+  onRemoveItem?: (id: string) => void
 }
 
-const WorkoutTable = ({ className = '', items }: WorkoutTableProps) => (
+const WorkoutTable = ({
+  className = '',
+  items,
+  onRemoveItem
+}: WorkoutTableProps) => (
   <table className={`w-full ${className}`.trim()} aria-label="workout-list">
     <thead>
       <TableHeader />
@@ -24,6 +29,7 @@ const WorkoutTable = ({ className = '', items }: WorkoutTableProps) => (
             kind={item.kind}
             date={item.date}
             variant={GeneralTools.isOdd(index) ? 'light' : 'dark'}
+            onRemove={onRemoveItem}
           />
         ))
       ) : (
