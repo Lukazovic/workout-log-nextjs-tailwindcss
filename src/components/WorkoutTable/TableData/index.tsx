@@ -53,7 +53,7 @@ const TableData = ({
           aria-label="Delete Item"
           onClick={handleRemove}
         >
-          <FontAwesomeIcon icon={faTrash} />
+          <FontAwesomeIcon className="w-4" icon={faTrash} />
         </button>
       </td>
     </tr>
