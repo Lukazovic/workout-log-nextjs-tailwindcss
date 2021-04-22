@@ -111,4 +111,41 @@ describe('<HomeLayout />', () => {
       expect(screen.getByText(/6 hours of exercises/i)).toBeInTheDocument()
     })
   })
+
+  describe('when add 1 item with 3 hours duration', () => {
+    describe('on remove items', () => {
+      it('should show an empty list', async () => {
+        render(<HomeLayout />)
+
+        const numberField = screen.getByRole('spinbutton')
+        const selectField = screen.getByRole('combobox')
+        const datePicker = screen.getByRole('date-picker')
+        const submitButton = screen.getByRole('button', { name: /add/i })
+
+        userEvent.type(numberField, '3')
+        userEvent.selectOptions(selectField, 'run')
+        userEvent.clear(datePicker)
+        userEvent.type(datePicker, '2020-12-30')
+        userEvent.click(submitButton)
+
+        expect(screen.getByText(/3 hours of exercises/i)).toBeInTheDocument()
+        expect(
+          screen.queryByRole('heading', {
+            level: 4,
+            name: /no exercises yet!/i
+          })
+        ).not.toBeInTheDocument()
+
+        const deleteFirstItemButton = screen.getByRole('button', {
+          name: /delete item/i
+        })
+        userEvent.click(deleteFirstItemButton)
+
+        expect(
+          screen.getByRole('heading', { level: 4, name: /no exercises yet!/i })
+        ).toBeInTheDocument()
+        expect(screen.getByText(/0 hours of exercises/i)).toBeInTheDocument()
+      })
+    })
+  })
 })

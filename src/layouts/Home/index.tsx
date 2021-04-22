@@ -14,6 +14,14 @@ const Home = () => {
 
   const exercisesTotalDuration = GeneralTools.totalDuration(exercises)
 
+  const handleRemoveItem = (itemId: string) => {
+    const updatedExercises = exercises.filter(
+      (exercise) => exercise.id !== itemId
+    )
+
+    setExercises(updatedExercises)
+  }
+
   const handleSubmit = (exercise: Omit<ExerciseProps, 'id'>) => {
     setExercises([
       ...exercises,
@@ -35,7 +43,7 @@ const Home = () => {
         id="workout-list"
         className="border-2 border-black max-h-96 overflow-y-auto"
       >
-        <WorkoutTable items={exercises} />
+        <WorkoutTable items={exercises} onRemoveItem={handleRemoveItem} />
       </section>
 
       <Heading className="text-center mt-8" as="h3">
