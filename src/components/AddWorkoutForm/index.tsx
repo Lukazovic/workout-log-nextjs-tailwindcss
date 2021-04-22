@@ -6,6 +6,7 @@ import DateField from 'components/DateField'
 import Button from 'components/Button'
 
 import ValidationTools from 'services/tools/validation'
+import GeneralTools from 'services/tools/general'
 
 import DEFAULT_KIND_OPTIONS from 'utils/enums/options.json'
 
@@ -62,7 +63,7 @@ const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
     const schema: AddWorkoutFormSchema = {
       duration: Number(duration),
       kind,
-      date: Number(date)
+      date: GeneralTools.dateToUtcTimestamp(Number(date))
     }
 
     !!onSubmit && onSubmit(schema)

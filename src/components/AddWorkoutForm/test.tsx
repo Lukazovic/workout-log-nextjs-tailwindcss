@@ -4,6 +4,8 @@ import userEvent from '@testing-library/user-event'
 
 import AddWorkoutForm from '.'
 
+import GeneralTools from 'services/tools/general'
+
 describe('<AddWorkoutForm />', () => {
   it('should render correctly', () => {
     render(<AddWorkoutForm />)
@@ -153,7 +155,7 @@ describe('<AddWorkoutForm />', () => {
     expect(onSubmit).toHaveBeenCalledWith({
       duration: 11,
       kind: 'run',
-      date: 1609286400000
+      date: GeneralTools.dateToUtcTimestamp(1609286400000)
     })
   })
 })
