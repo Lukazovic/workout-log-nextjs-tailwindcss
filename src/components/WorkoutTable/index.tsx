@@ -10,7 +10,7 @@ export type WorkoutTableProps = {
 }
 
 const WorkoutTable = ({ className = '', items }: WorkoutTableProps) => (
-  <table className={`w-full border-2 border-black ${className}`.trim()}>
+  <table className={`w-full ${className}`.trim()} aria-label="workout-list">
     <thead>
       <TableHeader />
     </thead>
