@@ -1,6 +1,7 @@
 import { useState, InputHTMLAttributes } from 'react'
 
 export type DateFieldProps = {
+  className?: string
   label?: string
   name?: string
   initialValue?: string
@@ -9,6 +10,7 @@ export type DateFieldProps = {
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
 const DateField = ({
+  className = '',
   label,
   name,
   initialValue,
@@ -26,7 +28,7 @@ const DateField = ({
   }
 
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${className}`.trim()}>
       {!!label && (
         <label
           className="mb-1 block text-sm font-medium text-gray-700"

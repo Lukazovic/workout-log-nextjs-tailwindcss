@@ -1,7 +1,48 @@
+import { useState } from 'react'
+
+import Heading from 'components/Heading'
 import AddWorkoutForm from 'components/AddWorkoutForm'
+import Divider from 'components/Divider'
+import WorkoutTable from 'components/WorkoutTable'
+
+import GeneralTools from 'services/tools/general'
+
+import { ExerciseProps } from 'components/WorkoutTable/TableData'
 
 const Home = () => {
-  return <AddWorkoutForm />
+  const [exercises, setExercises] = useState<ExerciseProps[]>([])
+
+  const exercisesTotalDuration = GeneralTools.totalDuration(exercises)
+
+  const handleSubmit = (exercise: Omit<ExerciseProps, 'id'>) => {
+    setExercises([
+      ...exercises,
+      { ...exercise, id: new Date().getTime().toString() }
+    ])
+  }
+
+  return (
+    <main className="w-11/12 max-w-screen-lg h-full max-h-screen mx-auto py-8">
+      <Heading className="text-center mb-8">Workout Log</Heading>
+
+      <section id="add-workout-form">
+        <AddWorkoutForm onSubmit={handleSubmit} />
+      </section>
+
+      <Divider className="my-8" />
+
+      <section
+        id="workout-list"
+        className="border-2 border-black max-h-96 overflow-y-auto"
+      >
+        <WorkoutTable items={exercises} />
+      </section>
+
+      <Heading className="text-center mt-8" as="h3">
+        {exercisesTotalDuration} hours of exercises
+      </Heading>
+    </main>
+  )
 }
 
 export default Home

@@ -5,11 +5,12 @@ import Empty from 'components/Empty'
 import GeneralTools from 'services/tools/general'
 
 export type WorkoutTableProps = {
+  className?: string
   items?: ExerciseProps[]
 }
 
-const WorkoutTable = ({ items }: WorkoutTableProps) => (
-  <table className="w-full border-2 border-black">
+const WorkoutTable = ({ className = '', items }: WorkoutTableProps) => (
+  <table className={`w-full ${className}`.trim()} aria-label="workout-list">
     <thead>
       <TableHeader />
     </thead>

@@ -3,10 +3,16 @@ import { faCalendarTimes } from '@fortawesome/free-solid-svg-icons'
 
 import Heading from 'components/Heading'
 
-const Empty = () => (
-  <div className="w-full flex align-center justify-center text-4xl">
+export type EmptyProps = {
+  className?: string
+}
+
+const Empty = ({ className = '' }: EmptyProps) => (
+  <div
+    className={`w-full flex align-center justify-center text-4xl ${className}`.trim()}
+  >
     <FontAwesomeIcon
-      className="mr-4 text-red-500"
+      className="mr-4 w-9 text-red-500"
       icon={faCalendarTimes}
       aria-hidden="false"
     />

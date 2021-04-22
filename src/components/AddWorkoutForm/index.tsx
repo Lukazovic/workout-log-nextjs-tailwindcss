@@ -6,6 +6,7 @@ import DateField from 'components/DateField'
 import Button from 'components/Button'
 
 import ValidationTools from 'services/tools/validation'
+import GeneralTools from 'services/tools/general'
 
 import DEFAULT_KIND_OPTIONS from 'utils/enums/options.json'
 
@@ -19,10 +20,11 @@ const KIND_OPTIONS: SelectOptionsProps[] = [
 export type AddWorkoutFormSchema = Omit<ExerciseProps, 'id'>
 
 export type AddWorkoutFormProps = {
+  className?: string
   onSubmit?: (Schema: AddWorkoutFormSchema) => void
 }
 
-const AddWorkoutForm = ({ onSubmit }: AddWorkoutFormProps) => {
+const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
   const [duration, setDuration] = useState<number>(0)
   const [kind, setKind] = useState<string>(KIND_OPTIONS[0].value as string)
   const [date, setDate] = useState<number>(new Date().getTime())
@@ -61,14 +63,18 @@ const AddWorkoutForm = ({ onSubmit }: AddWorkoutFormProps) => {
     const schema: AddWorkoutFormSchema = {
       duration: Number(duration),
       kind,
-      date: Number(date)
+      date: GeneralTools.dateToUtcTimestamp(Number(date))
     }
 
     !!onSubmit && onSubmit(schema)
   }
 
   return (
-    <form onSubmit={handleSubmit} aria-label="create new workout">
+    <form
+      className={className.trim()}
+      onSubmit={handleSubmit}
+      aria-label="create new workout"
+    >
       <fieldset className="border-2 border-black py-6 px-4">
         <legend>Insert an item</legend>
 

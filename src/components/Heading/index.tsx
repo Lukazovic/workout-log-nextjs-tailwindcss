@@ -15,6 +15,7 @@ type HeadingSizes =
 type HeadingColors = 'dark' | 'light'
 
 export type HeadingProps = {
+  className?: string
   as?: HeadingOptions
   size?: HeadingSizes
   color?: HeadingColors
@@ -27,13 +28,14 @@ const TEXT_COLORS = {
 }
 
 const Heading = ({
+  className = '',
   as = 'h1',
   size = '4xl',
   color = 'dark',
   children
 }: HeadingProps) => {
   const fontColor = TEXT_COLORS[color]
-  const style = `font-bold text-${size} ${fontColor}`
+  const style = `font-bold text-${size} ${fontColor} ${className}`.trim()
 
   if (as === 'h1') {
     return <h1 className={style}>{children}</h1>

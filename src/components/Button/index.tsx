@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes } from 'react'
 
 export type ButtonProps = {
+  className?: string
   fullWidth?: boolean
   minimal?: boolean
   icon?: React.ReactNode
@@ -17,6 +18,7 @@ const MINIMAL_STYLES = `${DEFAULT_STYLES} bg-transparent border-primary-700 text
 const MINIMAL_HOVER_STYLES = `hover:border-primary-600 hover:text-primary-600`
 
 const Button = ({
+  className = '',
   fullWidth = false,
   minimal = false,
   icon,
@@ -35,7 +37,7 @@ const Button = ({
 
   return (
     <button
-      className={`${styles}${fullWidth ? ' w-full' : ''}`}
+      className={`${styles}${fullWidth ? ' w-full' : ''} ${className}`.trim()}
       disabled={disabled}
       {...props}
     >
