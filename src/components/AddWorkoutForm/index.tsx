@@ -25,9 +25,9 @@ export type AddWorkoutFormProps = {
 }
 
 const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
-  const [duration, setDuration] = useState<number>(0)
+  const [duration, setDuration] = useState<number>()
   const [kind, setKind] = useState<string>(KIND_OPTIONS[0].value as string)
-  const [date, setDate] = useState<number>(new Date().getTime())
+  const [date, setDate] = useState<number>()
 
   const handleDurationChange = (newDuration: number) => {
     setDuration(newDuration)
@@ -86,6 +86,7 @@ const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
             min={0}
             onChange={handleDurationChange}
           />
+
           <SelectField
             options={[...KIND_OPTIONS]}
             name="type"
@@ -94,12 +95,7 @@ const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
             onChange={handleKindChange}
           />
 
-          <DateField
-            name="date"
-            initialValue={new Date().toISOString()}
-            value={date}
-            onChange={handleDateChange}
-          />
+          <DateField name="date" value={date} onChange={handleDateChange} />
           <Button type="submit">Add</Button>
         </div>
       </fieldset>

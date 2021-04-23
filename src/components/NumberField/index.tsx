@@ -22,7 +22,7 @@ const NumberField = ({
   onChange,
   ...props
 }: NumberFieldProps) => {
-  const [value, setValue] = useState(String(initialValue))
+  const [value, setValue] = useState(initialValue && String(initialValue))
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.currentTarget.value
