@@ -17,7 +17,7 @@ const Empty = ({ className = '' }: EmptyProps) => (
       aria-hidden="false"
     />
 
-    <Heading as="h4">No exercises yet!</Heading>
+    <Heading level="h4">No exercises yet!</Heading>
   </div>
 )
 
