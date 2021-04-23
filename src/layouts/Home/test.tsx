@@ -7,6 +7,17 @@ import HomeLayout from '.'
 import WorkoutResources from 'services/resources/workout'
 
 describe('<HomeLayout />', () => {
+  it('should render with logo and title', () => {
+    render(<HomeLayout />)
+
+    expect(
+      screen.getByRole('heading', { level: 1, name: /workout log/i })
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: /workout log/i })
+    ).toBeInTheDocument()
+  })
+
   it('should render with AddWorkoutForm and WorkoutTable', () => {
     render(<HomeLayout />)
 

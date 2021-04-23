@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import Heading from 'components/Heading'
+import Logo from 'components/Logo'
 import AddWorkoutForm from 'components/AddWorkoutForm'
 import Divider from 'components/Divider'
 import WorkoutTable from 'components/WorkoutTable'
@@ -42,9 +43,13 @@ const Home = () => {
 
   return (
     <main className="w-11/12 max-w-screen-lg h-full max-h-screen mx-auto py-8">
-      <Heading className="text-center mb-8 text-4xl" level="h1">
-        Workout Log
-      </Heading>
+      <header className="mb-8 flex items-center justify-center">
+        <Logo className="w-24 mr-4" />
+
+        <Heading className="text-center text-5xl" level="h1">
+          Workout Log
+        </Heading>
+      </header>
 
       <section id="add-workout-form">
         <AddWorkoutForm onSubmit={handleSubmit} />
