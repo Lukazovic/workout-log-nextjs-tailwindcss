@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Workout Log</title>
-        <link rel="shortcut icon" href="/tailwindcss.png" />
-        <link rel="apple-touch-icon" href="/tailwindcss.png" />
+        <link rel="shortcut icon" href="/logo-512.png" />
+        <link rel="apple-touch-icon" href="/logo-512.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
