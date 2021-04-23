@@ -3,12 +3,12 @@
   "short_name": "Workout Log",
   "icons": [
     {
-      "src": "/tailwindcss.png",
+      "src": "/logo-128.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "128x128"
     },
     {
-      "src": "/tailwindcss.png",
+      "src": "/logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
