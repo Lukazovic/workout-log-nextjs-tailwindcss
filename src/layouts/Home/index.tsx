@@ -42,7 +42,9 @@ const Home = () => {
 
   return (
     <main className="w-11/12 max-w-screen-lg h-full max-h-screen mx-auto py-8">
-      <Heading className="text-center mb-8">Workout Log</Heading>
+      <Heading className="text-center mb-8 text-4xl" level="h1">
+        Workout Log
+      </Heading>
 
       <section id="add-workout-form">
         <AddWorkoutForm onSubmit={handleSubmit} />
@@ -57,7 +59,7 @@ const Home = () => {
         <WorkoutTable items={exercises} onRemoveItem={handleRemoveItem} />
       </section>
 
-      <Heading className="text-center mt-8" as="h3">
+      <Heading className="text-center mt-8 text-2xl" level="h3">
         {exercisesTotalDuration} hours of exercises
       </Heading>
     </main>
