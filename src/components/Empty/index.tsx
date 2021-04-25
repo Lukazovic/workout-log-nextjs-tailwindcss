@@ -14,6 +14,7 @@ const Empty = ({ className = '' }: EmptyProps) => (
     <FontAwesomeIcon
       className="mr-4 w-9 text-red-500 self-center"
       icon={faCalendarTimes}
+      aria-hidden="false"
     />
 
     <Heading level="h4">No exercises yet!</Heading>
