@@ -78,7 +78,7 @@ const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
       <fieldset className="border-2 border-black py-6 px-4">
         <legend>Insert an item</legend>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <NumberField
             placeholder="Time spent"
             name="duration"
