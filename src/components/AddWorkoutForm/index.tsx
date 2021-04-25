@@ -25,7 +25,7 @@ export type AddWorkoutFormProps = {
 }
 
 const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
-  const [duration, setDuration] = useState<number>()
+  const [duration, setDuration] = useState(0)
   const [kind, setKind] = useState<string>(KIND_OPTIONS[0].value as string)
   const [date, setDate] = useState<number>()
 
@@ -80,23 +80,34 @@ const AddWorkoutForm = ({ className = '', onSubmit }: AddWorkoutFormProps) => {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <NumberField
+            label="Time spent"
             placeholder="Time spent"
             name="duration"
+            initialValue={0}
             value={duration}
             min={0}
             onChange={handleDurationChange}
           />
 
           <SelectField
+            label="Exercise"
             options={[...KIND_OPTIONS]}
             name="type"
             value={kind}
-            initialValue={KIND_OPTIONS[0].value as string}
+            initialValue={kind}
             onChange={handleKindChange}
           />
 
-          <DateField name="date" value={date} onChange={handleDateChange} />
-          <Button type="submit">Add</Button>
+          <DateField
+            label="Date"
+            name="date"
+            value={date}
+            onChange={handleDateChange}
+          />
+
+          <Button className="mt-6" type="submit">
+            Add
+          </Button>
         </div>
       </fieldset>
     </form>

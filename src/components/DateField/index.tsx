@@ -18,7 +18,9 @@ const DateField = ({
   onChange,
   ...props
 }: DateFieldProps) => {
-  const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(
+    initialValue || new Date().toISOString().slice(0, 10)
+  )
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.currentTarget.value
